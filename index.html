@@ -12,7 +12,7 @@
     </section>
 
     <h1>Let's go Exploring - Complete the Form!</h1>
-    <form action="">
+    <form action="./story.html" method="GET">
       <label for="animal1"> Animal 1:</label>
       <input type="text" id="animal1" name="animal1" required /><br />
       <br />
@@ -39,16 +39,38 @@
       </select>
       <br />
       <br />
-      <label for="textarea"> Meaningful Message:</label><br />
+      <label for="message"> Meaningful Message:</label><br />
       <textarea
-        id="textarea"
-        name="textarea"
+        id="message"
+        name="message"
         rows="5"
         cols="30"
         required
       ></textarea>
       <br />
-      <input type="submit" value="Form My Story" />
+      <input type="submit" value="Form My Story" onclick="getData()" />
     </form>
+    <script>
+      function getData() {
+        //gettting the values
+        let animal1 = document.getElementById("animal1").value;
+        let animal2 = document.getElementById("animal2").value;
+        let color1 = document.getElementById("color1").value;
+        let element1 = document.getElementById("element1").value;
+        let greeting = document.getElementById("greeting").value;
+        let how = document.getElementById("how").value;
+        let message = document.getElementById("message").value;
+        let number = document.getElementById("num").value;
+        //saving the values in local storage
+        localStorage.setItem("firstAnimal", animal1);
+        localStorage.setItem("secondAnimal", animal2);
+        localStorage.setItem("colorOne", color1);
+        localStorage.setItem("elementOne", element1);
+        localStorage.setItem("howTo", how);
+        localStorage.setItem("message", message);
+        localStorage.setItem("greeting", greeting);
+        localStorage.setItem("numberOfTimes", number);
+      }
+    </script>
   </body>
 </html>
